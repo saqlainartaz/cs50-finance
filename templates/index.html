@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <h1 class="mb-3">Index</h1>
+
+    <table class="table table-hover">
+        <thead>
+            <tr class="table-active table-light text-dark">
+            <th scope="col">Symbol</th>
+            <th scope="col">Name</th>
+            <th scope="col">Shares</th>
+            <th scope="col">Price</th>
+            <th scope="col">TOTAL</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in database %}
+            <tr class="table-dark text-warning">
+                <td>{{ data["symbol"] }}</td>
+                <td>{{ data["name"] }}</td>
+                <td>{{ data["shares"] }}</td>
+                <td>{{ data["price"] }}</td>
+                <td>{{ data["total"] }}</td>
+            </tr>
+            {% endfor %}
+
+            <tr class="table-dark text-warning">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Cash</td>
+                <td>{{ cash }}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr class="table-dark">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><strong>TOTAL</strong></td>
+                <td>{{ total_cash }}</td>
+            </tr>
+        </tfoot>
+        </table>
+{% endblock %}

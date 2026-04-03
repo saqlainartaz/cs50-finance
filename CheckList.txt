@@ -1,0 +1,2 @@
+1) Create All Necessary HTML files: DONE
+2) Make a working Registration process:
